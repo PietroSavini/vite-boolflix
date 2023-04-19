@@ -16,7 +16,7 @@ import { store } from '../store';
                 <h1>Bool<span>Flix</span></h1>
             </div>
             <div class="search-bar">
-                <input type="text" name="" id="" @keyup.enter="$emit('search')" v-model.trim="store.serachInput" placeholder=" cerca un film o una serie tv" >
+                <input type="text" name="" id="" @keyup.enter="$emit('search')" v-model.trim="store.searchInput" placeholder=" cerca un film o una serie tv" >
             </div>
         </div>
     </header>

@@ -3,7 +3,7 @@ const store = {
     seriesUrl: "https://api.themoviedb.org/3/search/tv",
     movies:[],
     series:[],
-    serachInput : "",
+    searchInput : "",
     key: "99f350ef6f236da2f9bdddac4ef5e822",
     imgUrl: "https://image.tmdb.org/t/p/w342"
 
