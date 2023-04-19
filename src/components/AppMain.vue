@@ -1,8 +1,9 @@
 <script>
+import { store } from '../store';
 export default {
     data(){
         return{
-
+            store
         }
     }
 }
@@ -12,7 +13,13 @@ export default {
     <section class="jumbotron">
         <div class="container jumbo">
             <div class="row">
-                <div class="col-4"></div>
+                <div class="col-4">
+                    <h2 class="jumbo-title"></h2>
+                    <h3 class="jumbo-original-title"></h3>
+                    <p class="jumbo-description"></p>
+                    <span class="rating"></span>
+                    <span class="lang"></span>
+                </div>
                 <div class="col-8"></div>
             </div>
         </div>
@@ -22,14 +29,14 @@ export default {
         
         <div class="container">
             <h2>Movies</h2>
-            <div class="row">
+            <div class="row mb-3">
                 <!-- cards for movies -->
-                <div class="col">
-                    
+                <div class="ms_card">
+                    <img src="" alt="">
                 </div>
             </div>
             <h2>TV-Series</h2>
-            <div class="row">
+            <div class="row mb-3">
                 
 
             </div>
@@ -50,24 +57,36 @@ export default {
             .row{
                 height: 100%;
             }
+            .col-4{
+                overflow-y: auto;
+                &::-webkit-scrollbar {
+                    width: 0px;
+                }
+            }
         }  
     }
     
     .results{
-        overflow-y: auto;
+        padding-bottom: 0;
         z-index: 1;
         box-shadow: inset 0px 0px 20px black;
         background: linear-gradient( rgb(0,0,0)10%,rgb(19, 18, 18) ) ;
-        &::-webkit-scrollbar {
-            width: 0px;    
-        }
+       
         
         .container{
             height: 100%;
             color: #fff;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+            width: 0px;    
+        }
             .row{
-                height: 50%;
+                height: 150px;
                 overflow-x: auto;
+                .ms_card{
+                    max-width: 342px;
+                    padding: 0;
+                }
             }
         }
     }
