@@ -4,7 +4,8 @@ const store = {
     movies:[],
     series:[],
     serachInput : "",
-    key: "99f350ef6f236da2f9bdddac4ef5e822"
+    key: "99f350ef6f236da2f9bdddac4ef5e822",
+    imgUrl: "https://image.tmdb.org/t/p/w342"
 
 }
 

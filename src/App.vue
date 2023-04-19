@@ -32,7 +32,7 @@ export default{
         
       })
       axios.get(store.seriesUrl,{params}).then((resp)=>{
-        this.store.movies = resp.data.results
+        this.store.series = resp.data.results
         console.log(resp.data.results )
         console.log("serie")
         
@@ -56,10 +56,6 @@ export default{
 <style lang="scss">
 @use "./styles/general.scss" as *;
 
-#app{
-  height: 100vh;
-  width: 100%;
-}
 
 main{
   height: calc(100% - 100px);

@@ -1,10 +1,16 @@
 <script>
 import { store } from '../store';
+import AppCardMovie from "./AppCardMovie.vue";
+import AppCardTv from "./AppCardTv.vue"
 export default {
     data(){
         return{
             store
         }
+    },
+    components:{
+        AppCardMovie,
+        AppCardTv,
     }
 }
 </script>
@@ -29,15 +35,13 @@ export default {
         
         <div class="container">
             <h2>Movies</h2>
-            <div class="row mb-3">
+            <div class="row media-scroller mb-3 flex-nowrap align-items-center">
                 <!-- cards for movies -->
-                <div class="ms_card">
-                    <img src="" alt="">
-                </div>
+                <AppCardMovie v-for="movieCard in store.movies" :movie="movieCard"/>
             </div>
             <h2>TV-Series</h2>
-            <div class="row mb-3">
-                
+            <div class="row media-scroller flex-nowrap align-items-center mb-3">
+                <AppCardTv v-for="tvCard in store.series" :tv="tvCard"/>
 
             </div>
         </div>
@@ -46,10 +50,10 @@ export default {
 
 <style scoped lang="scss">
     section{
-        height: 50%;
         padding: 2rem 2rem;
     }   
     .jumbotron{
+        height: 35%;
         background-color: rgb(0, 0, 0) ;
         padding-top:0;
         .jumbo{
@@ -67,6 +71,7 @@ export default {
     }
     
     .results{
+        height: 65%;
         padding-bottom: 0;
         z-index: 1;
         box-shadow: inset 0px 0px 20px black;
@@ -80,13 +85,24 @@ export default {
             &::-webkit-scrollbar {
             width: 0px;    
         }
-            .row{
-                height: 150px;
+            .media-scroller{
+                position: relative;
+                height: 200px;
                 overflow-x: auto;
-                .ms_card{
-                    max-width: 342px;
-                    padding: 0;
+                overflow-y: hidden;
+                overscroll-behavior-inline: contain ;
+                z-index: 1;
+                &::-webkit-scrollbar {   
+                background: #161616;
+                border-radius: 10px;
+                } 
+                &::-webkit-scrollbar-thumb{
+                    background-color: #434343;
+                    border-radius: 10px;
+                    
+
                 }
+                
             }
         }
     }
