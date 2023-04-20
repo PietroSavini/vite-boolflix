@@ -28,21 +28,17 @@ export default{
     
 
     newRequest(){
-      const newParams = {
+      const params = {
         api_key : this.store.key,
-        query : this.searchInput,
+        query : this.store.searchInput,
       }
       
-      axios.get(store.moviesUrl,{newParams}).then((resp)=>{
+      axios.get(store.moviesUrl,{params}).then((resp)=>{
       this.store.movies = resp.data.results
-      console.log(resp.data.results)
-      console.log("films")
       })
 
-      axios.get(store.seriesUrl,{newParams}).then((resp)=>{
+      axios.get(store.seriesUrl,{params}).then((resp)=>{
       this.store.series = resp.data.results
-      console.log(resp.data.results )
-      console.log("serie")
       })
     },
 
