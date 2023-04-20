@@ -20,7 +20,7 @@ export default{
   methods:{
     newSearch(){
       if(this.store.searchInput === ""){
-         this.apiRequest();
+          this.apiRequest();
       }else{
           this.newRequest();
         }
@@ -65,17 +65,17 @@ export default{
 
 <template>
     <AppHeader @search="newSearch"/>
-    <main>
+    <main class="d-flex flex-column">
       <AppMain/>
     </main>
+    
 </template>
 
 <style lang="scss">
 @use "./styles/general.scss" as *;
 
-
 main{
   height: calc(100% - 100px);
-  position: relative;
+
 }
 </style>
