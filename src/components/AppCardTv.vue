@@ -1,17 +1,17 @@
 <script>
 import { store } from '../store';
-    export default{
-        data(){
-            return{
-                store
+export default {
+    data() {
+        return {
+            store
 
-            }
-        },
-        props:{
-            tv: Object,
         }
-        
+    },
+    props: {
+        tv: Object,
     }
+
+}
 </script>
 
 <template>
@@ -20,6 +20,4 @@ import { store } from '../store';
     </div>
 </template>
 
-<style scoped lang="scss">
-    
-</style>
+<style scoped lang="scss"></style>
